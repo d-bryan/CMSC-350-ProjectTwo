@@ -56,7 +56,7 @@ Exponents with zero coefficients will be omitted.
     to be supplied. 
 - It is thrown by the constructor in the `Polynomial` class, should
     the supplied string contain coefficients or exponents of an improper type, 
-    or should exponents fail to be listed in strictly decending order.
+    or should exponents fail to be listed in strictly descending order.
 
 ## Ordered List class
 

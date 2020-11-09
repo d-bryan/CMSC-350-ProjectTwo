@@ -12,6 +12,13 @@ package project;
  * Invalid Polynomial Syntax Exception class
  */
 public class InvalidPolynomialSyntax extends Exception {
+  /*
+    todo: Defines an unchecked exception that contains a constructor, which allows a message
+          to be supplied.
+    todo: It is thrown by the constructor in the `Polynomial` class, should
+          the supplied string contain coefficients or exponents of an improper type,
+          or should exponents fail to be listed in strictly descending order.
+  */
 
   /**
    * Defines an unchecked exception from the Polynomial class
