@@ -19,7 +19,7 @@ Exponents with zero coefficients will be omitted.
     coefficient and exponent (Not permitted to use the pre-defined LinkedList class)
     Instead you must create the nodes of the linked list as instances of a 
     static nested class inside the `Polynomial` class.
-- Must implement both the `Iterable` and `Comparable` interfaces. 
+- `Polynomial` class Must implement both the `Iterable` and `Comparable` interfaces. 
 - Must have four public methods.
 
 ### Constructor
@@ -86,7 +86,7 @@ Exponents with zero coefficients will be omitted.
 This list fails to be sorted by the strong order that considers both the coefficient
 and exponents because the third polynomial is less than the second because coefficients
 on the x<sup>4</sup> terms. The coefficient on that term in the second polynomial is 5.0,
-which is greater than 4.5, the coefficient on the corresponding term is the third polynomial.
+which is greater than 4.5, the coefficient on the corresponding term in the third polynomial.
 
 They are sorted by the weak order that considers only the exponents, however. The third 
 polynomial is greater than the second because the third has a x<sup>2</sup> term and

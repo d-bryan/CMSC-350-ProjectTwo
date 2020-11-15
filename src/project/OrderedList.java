@@ -3,33 +3,45 @@
  * Author: Dylan Bryan
  * Date: 11/6/20, 7:59 PM
  * Project: ProjectTwo
- * Purpose: Lorem ipsum dolor sit amet
+ * Purpose: Utility class which checks whether the array list of linked lists
+ * is sorted in a strong order or weak order
  ******************************************************************************/
 
 package project;
 
-import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Ordered List class to check whether list is sorted
+ */
 public class OrderedList {
-  /*
-    todo: Utility class that contains <strong>TWO</strong> overloaded implementations of a method called
-          `checkSorted`, which determines whether a `List` object, supplied as parameter,
-            is in strictly ascending order. (Both should be `Static` methods)
-              - The first should accept a `List` that contains elements that implement `Comparable`
-              - The second should instead be supplied an additional parameter that is an object of
-                a class that implements the `Comparator` interface.
-              - Refer to the signatures of the two `sort` methods in the predefined Java `Collections`
-                class as a model for how these two methods should be defined.
-              - Ensure that the first overloaded method calls the second
-  */
 
-  public <T extends Comparable<? super T>> void checkSorted(List<T> list) {
-    list.sort(null);
+  /**
+   * Calls the second checkSorted method with the original
+   * list passed in and the size of the list as parameters
+   * @param list LIST Array List of type Polynomial
+   * @return BOOLEAN true/false
+   */
+  public static boolean checkSorted(List<Polynomial> list) {
+    return checkSorted(list, list.size());
   } // end checkSorted method
 
-  public <T> void checkSorted(List<T> list, Comparator<? super T> c) {
-    list.sort(c);
+  /**
+   * Recursive check as to whether the list is sorted in the
+   * strong or weak order, using the compareTo method from
+   * the Polynomial class.
+   * @param list LIST Array List of type Polynomial
+   * @param index Starting index from size of list
+   * @return BOOLEAN true/false
+   */
+  public static boolean checkSorted(List<Polynomial> list, int index) {
+    if (index < 2) {
+      return true;
+    } else if (list.get(index - 2).compareTo(list.get(index - 1)) > 0) {
+      return false;
+    } else {
+      return checkSorted(list, index - 1);
+    } // end if/else if/else statement
   } // end checkSorted method
 
 } // end OrderedList class
